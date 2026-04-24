@@ -7,7 +7,6 @@ type Post = {
   title: string;
   body: string;
 };
-
 type State = {
   posts: Post[];
   loading: boolean;
