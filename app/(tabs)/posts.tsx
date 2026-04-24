@@ -1,5 +1,6 @@
 import React from 'react';
 import { ActivityIndicator, FlatList, StyleSheet, Text, View, } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 
 type Post = {
   id: number;
@@ -57,11 +58,13 @@ export default class Posts extends React.Component<{}, State> {
           data={posts}
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
-            <View style={styles.card}>
+             <TouchableOpacity onPress={() => alert(item.title)}>
+              <View style={styles.card}>
               <Text style={styles.id}>{item.id}</Text>
               <Text style={styles.title}>{item.title}</Text>
               <Text style={styles.body}>{item.body}</Text>
             </View>
+             </TouchableOpacity>
           )}
         />
       </View>
